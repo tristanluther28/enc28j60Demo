@@ -63,6 +63,7 @@ int main(void)
 {
 	//DEBUG Initialize the USART Output
 	USART_Init(9600);
+	USART_WriteString("ENC28J60 Ethernet Controller\n\r");
 	
 	//Initialize the ENC28J60
 	

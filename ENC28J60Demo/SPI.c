@@ -45,8 +45,8 @@ void SPI_Init(){
 	DDR_SPI |= (1<<SS)|(1<<MOSI)|(0<<MISO)|(1<<SCK); //SS | MOSI | MISO | SCK
 	//Set the default values for outputs to zero and inputs to have pull-up resistors
 	PORT_SPI |= (0<<SS)|(0<<MOSI)|(1<<MISO)|(0<<SCK); //SS | MOSI | MISO | SCK
-	//SPI Control Register, Enable, LSB bit first, Set to master mode, Mode 1:1, f/128 SCK Frequency
-	SPCR = (1<<SPE) | (1<<DORD) | (1<<MSTR) | (1<<CPOL) | (1<<CPHA) | (1<<SPR1) | (0<<SPR0);
+	//SPI Control Register, Enable, MSB bit first, Set to master mode, Mode 0:0, f/128 SCK Frequency
+	SPCR = (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (1<<SPR1) | (0<<SPR0);
 	SPSR = (1<<SPI2X);
 	return; //Return to call point
 }
